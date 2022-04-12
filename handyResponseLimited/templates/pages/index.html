@@ -1,0 +1,763 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home Responsive Limited-A global service-oreinted company that provides various types of household chores services| homeresponsivelimited.com Nigeria{% endblock %}
+{% block description %}Handy Response Limited is a global service-oriented company that provides various types of 'household chores related services', a helping hand to those who are seeking domestic staff who can assist them in managing their household. The company offers its services to everyone ranging from young professionals, the elderly, busy working mums, disabled people, companies/offices, party planners and people moving into new houses. We pride ourselves in building a reputation that substantially outstrips our competitors with a vision to position ourselves as the top-class service provider to households in Nigeria.{% endblock %}
+{% block keywords %}House Cleaning, Dish Washing, Laundry, Cooking, Chef, Gardener, Nanny, Maid, After-Party cleanup, New House cleaning, Car Washing, House, Car, Vehincle, Help, Baby, House Maid,Nigeria, Africa, Jobs,Money,Employement,Lagos{% endblock %}
+{% block main %}
+<style>
+.sub-headings{
+  color: var(--mild-color) !important;
+  font-size: medium !important;
+  font-weight: 300;
+  text-align: center;
+}
+.hero1{
+    background-image: url("{% static 'images/bg01.jpg' %}");
+}
+.hero2{
+    background-image: url("{% static 'images/bg02.jpg' %}");
+}
+.hero3{
+    background-image: url("{% static 'images/bg03.jpg' %}");
+}
+.smallHero{
+    background-image: url("{% static 'images/bg04.jpg' %}");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* About us styling */
+@media (max-width:992px) {
+    .about{
+        margin: 8em auto;
+    }
+    .acd-img{
+        display: none;
+    }
+}
+#about .card {
+  perspective: 150rem;
+  position: relative;
+  height: fit-content;
+  max-width: 100%;
+  margin: 2rem;
+  box-shadow: none;
+  background: none;
+}
+#about img{
+    width: 8em;
+    height:8em;
+    display: block;
+    margin: 10px auto;
+}
+#about .card-side {
+  height: fit-content;
+  border-radius: 15px;
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding:1rem;
+  color: white;
+}
+
+#about .card-side.back {
+  transform: rotateY(-180deg);
+  background-color: #240046;
+  height: 240px;
+}
+
+@media (max-width:991px) {
+ #about .card-side.back {
+  height: fit-content;
+  padding-top: 20px;
+  padding-bottom: 20px;
+} 
+}
+
+#about .card-side.front {
+  background-color: white;
+}
+
+#about .card:hover .card-side.front {
+  transform: rotateY(180deg);
+}
+
+#about .card:hover .card-side.back {
+  transform: rotateY(0deg);
+}
+#about p{
+    font-size: smaller;
+    text-align: justify;
+}
+
+/* Why us styling */
+.whyus-box{
+    width: 100%;
+    height: 100px;
+    background-color: #240046;
+    margin: 10px auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 6px -6px gray;
+}
+.whyus img{
+    width: 80px;
+    height: 80px;
+    display: block;
+}
+#whysmall p{
+    text-align: justify !important;
+    margin: 0px auto;
+    color: white !important;
+}
+@media (min-width:992px) {
+    .why-sm-heading{
+        display:none ;
+    }
+    #whysmall{
+        display: none;
+    }
+}
+#whysmall .row{
+    background-color: #240046;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Testimpnial styling */
+.testimonial-card{
+    width: 100%;
+    background-color: #240046;
+    padding: 20px;
+    border-radius: 20px;
+    height: 330px;
+    box-shadow: 5px 5px 10px -1px grey;
+}
+.testimonial-card .qoute{
+    height: 250px;
+}
+.test-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: block;
+}
+.testimonial-card .footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+.test-col{
+    margin: 2em auto;
+}
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+.body--container {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  height: 100vh;
+}
+
+.bubble--container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  height: 100vh;
+}
+
+.text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  width: 50%;
+  text-align: center;
+  font-size: 40px;
+  z-index: 3;
+  color: #373570;
+}
+
+.bubble {
+  z-index: 2;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.bubble--one {
+  width: 75px;
+  height: 75px;
+  left: 200px;
+  top: 200px;
+  background-color: #70e2ac;
+}
+
+.bubble--two {
+  top: 500px;
+  right: 200px;
+  background-color: #c254f7;
+}
+
+.bubble--three {
+  bottom: 200px;
+  left: 200px;
+  background-color: #4461f7;
+}
+
+.bubble--large {
+  z-index: 1;
+  width: 500px;
+  height: 500px;
+  background-color: #fcf8ff;
+}
+
+@media (max-width: 1000px) {
+  .text {
+    width: 80%;
+    font-size: 30px;
+  }
+
+  .bubble--one {
+    left: 100px;
+  }
+
+  .bubble--two {
+    right: 100px;
+  }
+  .bubble--three {
+    left: 100px;
+  }
+
+  .bubble--large {
+    width: 300px;
+    height: 300px;
+  }
+}
+/* How it works styling */
+
+#work .container {
+  width: 100%;
+  max-width: fit-content;
+  margin: 50px auto;
+}
+
+#work button.accordion {
+  width: 100%;
+  background-color: #240046;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: medium;
+  font-weight: normal;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+}
+
+#work button.accordion:after {
+  font-family: FontAwesome;
+  content: "\f150";
+  font-family: "fontawesome";
+  font-size: 18px;
+  float: right;
+}
+
+#work button.accordion.is-open:after {
+  content: "\f151";
+}
+
+#work button.accordion:hover,
+button.accordion.is-open {
+  background-color: #6f1a99;
+}
+
+#work .accordion-content {
+  background-color: #ec268f;
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+  padding: 0 20px;
+  font-size: small;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+/* Blog styling */
+
+.blog-item .container{
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.blog-item .square:hover {
+    transform: translate(10px, -10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+     }
+
+
+.blog-item .square{
+  width: 80%;
+  margin: 0px auto;
+  height: 480px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 20px 50px grey;
+  transition: all 0.3s ease; 
+}
+.blog-item img{
+    width: 100%;
+    height: 180px;
+}
+.blog-item p{
+ text-align: justify; 
+ padding-left: 30px;
+ padding-right: 30px;
+ font-family: 'Open Sans', sans-serif;
+ font-size: small;
+ line-height: 18px;
+}
+/* Contact styling */
+
+</style>
+<!-- Hero Page large screen Start -->
+<section class="row largeHero d-none d-lg-flex d-md-none d-sm-none" style="height: fit-content;background-color: #240046;">
+<div class="col-lg-4">
+    <div style="height: 500px;" class=" d-flex align-items-center">
+        <div>
+        <!-- moving letter start -->
+        <h1 class="ml10 px-2">
+            <span class="text-wrapper">
+              <span class="letters">GO Out & Have Fun..</span>
+            </span>
+          </h1>
+        <!-- moving letter end -->
+        <p class="px-2">Let Handy Response Limited handy your house chores while you enjoy your time...</p>
+        <a href="{% url 'offerPage' %}" class="btn btny px-3">See Our Offers <i class="fa fa-arrow-right" class="text-light" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>
+<!-- Hero Picture Start -->
+<div class="col-4 p-5">
+    <div class="firstHeroPic hero1">
+        <div class="heroTextBox d-flex align-items-center">
+            <h5 class="px-2">Committed <i class="fa fa-check-square-o text-success" aria-hidden="true"></i></h5>
+        </div>
+    </div>
+</div>
+<div class="col-2 p-4">
+    <div class="firstHeroPic hero2">
+        <div class="heroTextBox d-flex justify-content-start pb-3">
+            <h5 class="h5x px-2" style="height: 40%;">Professionals <i class="fa fa-check-square-o text-success" aria-hidden="true"></i></h5>
+        </div>
+    </div>
+</div>
+<div class="col-2 p-3">
+    <div class="firstHeroPic hero3">
+        <div class="heroTextBox d-flex justify-content-start">
+            <h5 class="h5x px-2" style="height: 25%;">Trained <i class="fa fa-check-square-o text-success" aria-hidden="true"></i></h5>
+        </div>
+    </div>
+</div>
+<!-- Hero Picture End -->
+</section>
+<!-- Hero Page large screen End -->
+
+<!-- Hero Page Medium and small screen  start -->
+<section class="row smallHero d-lg-none d-md-flex d-sm-flex">
+   <div class="col-12 d-flex align-items-center justify-content-start" style="height: 550px;">
+    <div class="p-2" style="background-color: rgba(0, 0, 0, 0.8);">
+        <!-- moving letter start -->
+        <h1 class="ml10 px-2">
+            <span class="text-wrapper">
+              <span class="letters">GO Out & Have Fun..</span>
+            </span>
+          </h1>
+        <!-- moving letter end -->
+        <p class="px-2" style="color: grey;">Let Handy Response Limited handy your house chores while you enjoy your time...</p>
+        <a href="{% url 'offerPage' %}" class="btn btny px-3">See Our Offers <i class="fa fa-arrow-right" class="text-light" aria-hidden="true"></i></a>
+    </div>
+   </div>
+</section>
+<!-- Hero page medium and small screen end -->
+
+<!-- about us start -->
+<section id="about" style="padding: 10em 2em 5em 2em !important;">
+    <!-- About us heading start -->
+    <div class="col-12">
+        <h3 class="headings my-2">About Us</h3>
+        <p class="text-dark p-3" style="text-align: justify !important;">
+            Home Responsible is a global service-oriented company that provides various types of 'household chores related services', a helping 
+            hand to those who are seeking domestic staff who can assist them in managing their household. The company offers its services to everyone 
+            ranging from young professionals, the elderly, busy working mums, disabled people, companies/offices, party planners and people 
+            moving into new houses.We pride ourselves in building a reputation that substantially outstrips our competitors with a vision to position ourselves as the top-class service provider to households in Nigeria 
+        </p>
+    </div>
+    <!-- About us heading end -->
+    <div class="col-12">
+        <div class="row">
+              <!-- About us item start -->
+    <!-- vison -->
+    <div class="col-lg-4 col-md-12 col-sm-12 about">
+        <div class="card">
+            <div class="card-side front">
+                <img src="{% static 'images/vision.png' %}" alt="" class="img-fluid">
+                <h2 class="sub-headings my-3 fw-bold">Our Vision</h2>
+                <a class="btn btnx d-block mx-auto" style="width: fit-content;">Read</a>
+            </div>
+            <div class="card-side back">
+              <div>
+                <h2 class="sub-headings my-3" fw-bold>Our Mission</h2>
+                <p class="text-light">
+                    To become a top-class service provider to households in Africa
+                </p>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!-- mission -->
+    <div class="col-lg-4 col-md-12 col-sm-12 about">
+        <div class="card">
+            <div class="card-side front">
+                <img src="{% static 'images/leadership.png' %}" alt="" class="img-fluid">
+                <h2 class="sub-headings my-3 fw-bold">Our Mission</h2>
+                <a class="btn btnx d-block mx-auto" style="width: fit-content;">Read</a>
+            </div>
+            <div class="card-side back">
+              <div>
+                <h2 class="sub-headings my-3 fw-bold">Our Vision</h2>
+                <p class="text-light">
+                Provide Excellent professional services and 
+                improve its position as a leader in this field.<br> 
+                Build and maintain a team Motivated and 
+                Committed workforce with high work ethos.<br>
+                Use Client Satisfaction and act as an 
+                effective catalyst for making lives of people 
+                easier and comfortable.<br>              
+               </p>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- core values -->
+    <div class="col-lg-4 col-md-12 col-sm-12 about">
+        <div class="card">
+            <div class="card-side front">
+              <div>
+                <img src="{% static 'images/customers.png' %}" alt="" class="img-fluid">
+                <h2 class="sub-headings my-3 fw-bold">Our Cooperate Values</h2>
+                <a class="btn btnx d-block mx-auto" style="width: fit-content;">Read</a>
+              </div>
+            </div>
+            <div class="card-side back">
+              <div>
+                <h2 class="sub-headings my-3 fw-bold">Our Cooperate Values</h2>
+                <p class="text-light">
+                Our core values guide the way we think, act and interpret things. Home Responsible core values are summed in the acronym 'GRACE', which stands for: Genuine, Responsibility, Accountability, Commitment and Excellence.
+                </p>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!-- about item end -->
+        </div>
+    </div>
+</section>
+<!-- #about us end-->
+
+<!-- call to action start -->
+<section class="call-to-action py-5" style="margin-top:12em;">
+     <!-- Call to action start -->
+     <div class="col-12 mt-5">
+        <h3 class="headings text-center py-4">Do you need more explanation or enquries ?</h3>
+      <a href="tel:+" class="btn btnx d-block mx-auto my-2" style="width: fit-content;">Call Us Today!!</a>
+    </div>
+    <!-- call to action end -->
+</section>
+<!-- call to action end -->
+
+<!-- why home response start -->
+<section class="row whyus" style="padding:5em 2em 5em 2em ;background-color: #B8B5FF;">
+    <!-- title start -->
+    <div class="col-12 d-none d-lg-inline-block d-md-none d-sm-none" style="padding: 0px 12em;">
+        <h3 class="text-start headings">
+            Why Home Response Limited ?
+        </h3>
+        <p class="text-start sub-headings">Why Thousand Of Clients Choose US.</p>
+    </div>
+    <!-- title end -->
+     <!-- title start -->
+     <div class="col-12 why-sm-heading px-3">
+        <h3 class="text-start headings">
+            Why Home Response Limited ?
+        </h3>
+        <p class="text-start sub-headings">Why Thousand Of Clients Choose US.</p>
+    </div>
+    <!-- title end -->
+
+    <div class="col-12 d-none d-lg-inline-block d-md-none d-sm-none" style="padding: 0px 8em;">
+        <div class="row p-4">
+
+            <!-- left -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="whyus-box px-2" data-aos="zoom-in">
+                    <img src="{% static 'images/commitment.png' %}" alt="commitment" class="img-fluid">
+                    <small> We are Commited</small>
+                </div>
+                <div class="whyus-box px-2" data-aos="zoom-in">
+                    <img src="{% static 'images/professional.png' %}" alt="professional" class="img-fluid">
+                    <small>We are Proffesionals</small>
+                </div>
+            </div>
+
+            <!-- middle -->
+            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="zoom-in">
+                <div class="whyus-box flex-direction-column px-2" style="height: 210px;">
+                    <img src="{% static 'images/presentation.png' %}" alt="training" class="img-fluid">
+                    <small>Client Specific Training</small>
+                </div>
+            </div>
+
+            <!-- right -->
+             <div class="col-lg-4 col-md-6 col-sm-12" data-aos="zoom-in">
+                <div class="whyus-box px-2">
+                    <img src="{% static 'images/teamwork.png' %}" alt="presentation" class="img-fluid">
+                    <small>Experience Workforce</small>
+                </div>
+                <div class="whyus-box px-2" data-aos="zoom-in">
+                    <img src="{% static 'images/reflection.png' %}" alt="reflection" class="img-fluid">
+                    <small>Staff outlook Appearance</small>
+                </div>
+            </div>
+
+            
+
+        </div>
+    </div>
+ <!-- small screen view -->
+    <div class="col-md-8 col-sm-10 mx-auto" id="whysmall">
+        <div class="row">
+           <div class="col-sm-12 col-md-6 why1">
+               <p >Commited</p>
+           </div>
+           <div class="col-sm-12 col-md-6 why2">
+               <p>Professionals</p>
+            </div>
+           <div class="col-sm-12 col-md-6 why4">
+               <p>Experience Workforce</p>
+           </div>
+           <div class="col-sm-12 col-md-6 why3">
+            <p>Client Specific Training</p>
+         </div>
+           <div class="col-sm-12 col-md-6 why5">
+               <p>Staff Outlook Appearance</p>
+           </div>
+        </div>
+    </div>
+
+</section>
+<!-- why home response end -->
+
+<!-- testimonial start -->
+<section class="row d-flex justify-content-evenly pb-5 align-items-center" id="testimony" style="padding-top: 6em !important;">
+    <!-- heading start -->
+    <div class="col-12 px-5 my-5">
+      <h3 class="headings px-5">TESTIMONIAL</h3>
+      <h5 class="sub-headings text-start px-5">WHAT PEOPLE SAY ABOUT US</h5>
+    </div>
+    <!-- heading end -->
+    <!-- testimonial card start -->
+    <div class="col-12 px-5">
+        <div class="row px-5">
+            <!-- item start -->
+            <div class="col-lg-3 col-md-6 col-sm-12 test-col">
+                <div class="testimonial-card" data-aos="zoom-in">
+                    <div class="qoute">
+                        <small class="text-light">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea pariatur quam. Dolore, ipsum similique asperiores iste dolor vel quo consequatur quae quos dolorem neque.
+                        </small>
+                    </div>
+                    <div class="footer">
+                        <img src="{% static 'images/test1.jpg' %}" class="img-fluid test-img" alt="testimonial">
+                        <p class="">-John Wick</p>
+                    </div>
+                </div>
+            </div>
+            <!-- item end -->
+            <!-- item start -->
+            <div class="col-lg-3 col-md-6 col-sm-12 test-col">
+                <div class="testimonial-card" data-aos="zoom-in">
+                    <div class="qoute">
+                        <small class="text-light">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro cumque ullam optio atque consequuntur reprehenderit magni error cum, ab omnis?
+                        </small>
+                    </div>
+                    <div class="footer">
+                        <img src="{% static 'images/test1.jpg' %}" class="img-fluid test-img" alt="testimonial">
+                        <p class="">-John Wick</p>
+                    </div>
+                </div>
+            </div>
+            <!-- item end -->
+            <!-- item start -->
+            <div class="col-lg-3 col-md-6 col-sm-12 test-col">
+                <div class="testimonial-card" data-aos="zoom-in">
+                    <div class="qoute">
+                        <small class="text-light">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro cumque ullam optio atque consequuntur reprehenderit magni error cum, ab omnis?
+                        </small>
+                    </div>
+                    <div class="footer">
+                        <img src="{% static 'images/test1.jpg' %}" class="img-fluid test-img" alt="testimonial">
+                        <p class="">-John Wick</p>
+                    </div>
+                </div>
+            </div>
+            <!-- item end -->
+            <!-- item start -->
+            <div class="col-lg-3 col-md-6 col-sm-12 test-col">
+                <div class="testimonial-card" data-aos="zoom-in">
+                    <div class="qoute">
+                        <small class="text-light">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro cumque ullam optio atque consequuntur reprehenderit magni error cum, ab omnis?
+                        </small>
+                    </div>
+                    <div class="footer">
+                        <img src="{% static 'images/test1.jpg' %}" class="img-fluid test-img" alt="testimonial">
+                        <p class="">-John Wick</p>
+                    </div>
+                </div>
+            </div>
+            <!-- item end -->
+        </div>
+    </div>
+    <!-- testimonial card end -->
+  
+</section>
+<!-- testimonial end -->
+<!-- how it works start -->
+<section class="row px-4" id="work" style="padding-top: 6em;">
+    <!-- accordion start -->
+    <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="container">
+            <h3 class="headings my-4">How it Works</h3>
+          
+            <button class="accordion">Service Booking</button>
+            <div class="accordion-content">
+              <p>
+                Whether you need a wordpress website, a shopify site, or a custom fullstack application, we got you! No matter what kind of website or application you need, it will be made with clean and maintable code that follows modern development standards. We also have top notch designers that can make unique designs that will make your website look different and unique. Not to mention that we also provide 24/7 website maintenance so that you get all the support you need.
+              </p>
+            </div>
+          
+            <button class="accordion">Service Charges</button>
+            <div class="accordion-content">
+              <p>
+                We believe that in order to have a successful website, you need to constantly adjust and adapt to the data provided by your website visitors. Here at Pierre Web Development, we have narrowed down the specific key performance indicators that will dramatically boost your success with connecting to target markets. We will provide a basic metric dashboard based on how much traffic your site gets, detailed analytical reports that show which parts of your website is the most popular among visitors as well as access to tools you can use to make meaningful decisions based on this data.
+              </p>
+            </div>
+
+            <button class="accordion">Complaint</button>
+            <div class="accordion-content">
+              <p>
+                We believe that in order to have a successful website, you need to constantly adjust and adapt to the data provided by your website visitors. Here at Pierre Web Development, we have narrowed down the specific key performance indicators that will dramatically boost your success with connecting to target markets. We will provide a basic metric dashboard based on how much traffic your site gets, detailed analytical reports that show which parts of your website is the most popular among visitors as well as access to tools you can use to make meaningful decisions based on this data.
+              </p>
+            </div>
+
+            <button class="accordion">Terms and Conditions</button>
+            <div class="accordion-content">
+              <p>
+                We believe that in order to have a successful website, you need to constantly adjust and adapt to the data provided by your website visitors. Here at Pierre Web Development, we have narrowed down the specific key performance indicators that will dramatically boost your success with connecting to target markets. We will provide a basic metric dashboard based on how much traffic your site gets, detailed analytical reports that show which parts of your website is the most popular among visitors as well as access to tools you can use to make meaningful decisions based on this data.
+              </p>
+            </div>
+          
+            <button class="accordion">Handy Responsive Limited</button>
+          </div>
+    </div>
+    <!-- accordion end -->
+    <!-- accordion img start -->
+    <div class="col-lg-6 col-md-12 col-sm-12 acd-img">
+        <img src="{% static 'images/bg17.png' %}" alt="" class="img-fluid d-block mx-auto" height="400px" width="400px">
+    </div>
+    <!-- accordion img end -->
+</section>
+<!-- how it works end -->
+
+<!-- blog start -->
+<section class="row blog pt-5" id="blog" style="padding-top: 10em;">
+    <div class="col-12">
+        <h2 class="headings text-center">Blog</h2>
+        <h5 class="sub-headings">News and Tricks</h5>
+    </div>
+    <!-- blog start-->
+    <div class="col-12">
+        <div class="row px-3">
+            <!-- blog item start -->
+            {% for blog in Blogs %}
+            <div class="col-lg-4 col-md-6 col-sm-12 blog-item">
+                <div class="container">
+                    <div class="square p-2">
+                      <img src="{{blog.img.url}}" class="mask img-fluid" title="{{blog.title}}">
+                      <div class="my-2" style="height: 200px;">
+                        <h6 class="headings my-4 px-3">{{blog.title}}</h6>
+                        <p class="text-dark">
+                          {{blog.content |truncatewords:18 }} <br><small style="color: #ec268f;">{{blog.date}}</small>
+                        </p>
+                      </div>
+                     <div>
+                         <a href="/detail/{{blog.id}}" target="_blank" class="btn btnx d-block mx-auto" style="width: fit-content;">Read More</a>
+                    </div>
+                    </div>
+                    </div>    
+            </div>
+            {% endfor %}
+            <!-- blog item end -->
+        </div>
+    </div>
+    <!-- blog end-->
+    <!-- pagination start -->
+    <div class="col-12">
+      <div class="mx-auto my-4" style="width: fit-content;">
+       <div class="pagination">
+         <span class="step-links py-2">
+            {% if Blogs.has_previous %}
+            <!-- <a href="?page=1" style="color: #240046;">&laquo; first</a> -->
+            <a href="?page={{ Blogs.previous_page_number }}#blog" class="btn btnx d-block mx-auto" style="color: #240046;">previous</a>
+            {% endif %}
+
+            <!-- <span class="current" style="color: #240046;">
+            Page {{ Blogs.number }} of {{ Blogs.paginator.num_pages }}.
+            </span> -->
+
+            {% if Blogs.has_next %}
+            <a href="?page={{ Blogs.next_page_number }}#blog" class="btn btnx d-block mx-auto" style="color: #240046;">next</a>
+            <!-- <a href="?page={{ Blogs.paginator.num_pages }}#blog" style="color: #240046;">last</a> -->
+            {% endif %}
+         </span>
+       </div>
+      </div>
+    </div>
+    <!-- pagination sen -->
+</section>
+<!-- blog end -->
+
+
+<!-- contact start -->
+<section class="row pt-5 pb-5 " id="contact-page">
+   
+</section>
+  <!-- contact end -->
+
+
+{% endblock %}

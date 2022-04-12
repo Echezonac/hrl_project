@@ -1,0 +1,231 @@
+   <style>
+  /* Broswer styling */
+  #highlight-pic{
+  background-image: url('{% static "images/bg02.png" %}');
+  height: fit-content;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1200;
+  background-attachment: fixed !important;
+}
+
+    /* about styling */
+  .about-banner{
+    background-image: url('{% static "images/bg02.png" %}');
+    height: fit-content;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1500;
+    background-attachment: fixed !important;
+  }
+  #service-page{
+    background-image: url('{% static "images/bg08.png" %}') !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: fit-content;
+  }
+  .heading{
+  font-size: 1.2em !important;
+}
+
+/* blog styling */
+.cardB{
+  width:fit-content;
+  background-color: white;
+  padding: 10px;
+  height: fit-content;
+  border-radius: 5px;
+}
+.card-faq{
+  width: 300px;
+  background-color: white;
+  padding: 10px;
+  height: 350px !important;
+}
+.card-faq img{
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+  height: 200px;
+}
+.card-faq p{
+  text-align: justify;
+}
+
+
+  /* #about-page{
+    background-image: url('{% static "images/core-bg01.png" %}') !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: fit-content;
+  } */
+  /* Highlights styling */
+#highlights-page{
+  height: 400px;
+  background-image: url('{% static "images/bg05.png" %}');
+ }
+#highlight-pic{
+  background-image: url('{% static "images/bg02.png" %}');
+  height: fit-content;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1500;
+  background-attachment: fixed !important;
+}
+
+
+    </style>
+
+<!-- Services start -->
+<section class="row pt-5" id="service-page">
+  <div class="col-12 pt-4">
+    <h3 class="text-center heading p-2">What we offer</h3>
+    <div class="underline text-center mx-auto"></div>
+    <h5 class="text-center py-2">The company specializes in providing the following services to households:</h5>
+  </div>
+  <!-- service container start -->
+  <div class="col-12">
+    <div class="row" style="padding: 50px 15%;">
+      {% for service in Services %}
+      <!-- item -->
+      <div class="col-lg-4 col-md-6 col-sm-12 my-4 mx-auto">
+       <a href="{% url 'detail_page' service.pk %}">
+        <div class="service-box d-flex align-items-center justify-content-center p-4 mx-auto" data-aos="flip-up" data-aos="flip-up" style="height:190px ;width: 200px !important;">
+          <img src="/media/{{service.icon}}" class="d-block mx-auto" alt="">
+          <h6 class="text-center pt-3 mb-3">{{service.caption}}</h6>
+          <p>
+            <a href="{% url 'detail_page' service.pk %}" class="btn btnx">Know More</a>
+          </p>
+         </div>
+       </a>
+      </div>
+      <!-- item end -->
+      {% endfor %}
+    </div>
+  </div>
+  <!-- service container end -->
+</section>
+<!-- services end -->
+
+<!-- booking start -->
+<section class="row py-5 d-flex align-items-center" id="booking"> 
+  <!-- heading start -->
+  <div class="col-lg-6 col-md-12 col-sm-12 py-3">
+    <h3 class="text-center heading p-2 text-light">Book SERVICES</h3>
+    <div class="underline text-center mx-auto"></div>
+    <h5 class="text-center py-2 text-light">WHAT SERVICES WE CAN OFFER YOU ?</h5>
+</div>
+  <!-- heading end -->
+    <!-- form start -->
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="form-box mx-auto bg-light">
+        <div class="conatainer">
+          {% if booked %}
+          <div class="row">
+            <div class="col-12">
+              <h3 class="text-center">Your request have been booked successfully!!</h3>
+            </div>
+            <div class="col-12">
+              <p class="text-center my-1">we will get back to you shortly</p>
+              <p class="text-center "><i class="em em---1 mx-1" aria-role="presentation" aria-label="THUMBS UP SIGN"></i>Thank you for choosing Handy Response Limited</p>
+            </div>
+          </div>
+          
+          {% else %}
+          <form action="{% url 'home_page' %}#booking" method="post">
+            {% csrf_token %}
+            <!-- name -->
+            <div class="field" tabindex="1">
+              <label for="id_message_name">
+                <i class="fa fa-user"></i>Your FullName
+              </label>
+              <input type="text" name="client_name" placeholder="Enter your fullname e.g John Doe" class="form-controls d-block mx-auto my-1" maxlength="100" id="id_client_name" required>
+            </div>
+            <!-- email -->
+            <div class="field" tabindex="2">
+              <label for="id_message_email">
+                <i class="fa fa-envelope"></i>Your Email 
+              </label>
+              <input type="email" name="client_email" placeholder="Enter your email e.g abc@email.com" class="form-controls d-block mx-auto my-1" maxlength="254" required id="id_client_email">
+            </div>
+            <!-- number -->
+            <div class="field" tabindex="3">
+              <label for="id_phoneNumber">
+                <i class="fa fa-envelope"></i>Your Phone Number
+              </label>
+              <input type="text" name="client_phoneNumber" placeholder="Enter your phone number e.g +234090000" class="form-controls d-block mx-auto my-1" maxlength="16" required="" id="id_client_phoneNumber">
+            </div>
+            <!-- message -->
+            <div class="field" tabindex="4">
+              <label for="id_message_content">
+                <i class="fa fa-edit"></i>Your Message
+              </label>
+              <textarea name="client_message" placeholder="Please tell the services you need " class="d-block mx-auto my-1" style="height:80px" cols="10" rows="10" maxlength="300" required id="id_client_message"></textarea>
+            </div>
+            <input type="submit" value="Book" class="my-2">
+           </form>
+          {% endif %}
+          
+        </div>
+      </div>
+    </div>
+    <!-- form end -->
+</section>
+<!-- booking end -->
+
+
+<!-- Styling start-->
+<style>
+  .core-values-banner{
+    background-image: url('{% static "images/core-bg01.png" %}') !important;
+    /* background-image: url('/media/{{about.banner}}'); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+  }
+</style>
+<!-- Styling end -->
+ <form action="{% url 'contact_page' %}" method="POST" class="pt-3">
+              {% csrf_token %}
+              <div class="field" tabindex="1">
+                <label for="id_message_name">
+                  <i class="fa fa-user"></i>Your FullName
+                </label>
+                <input name="message_name" type="text" placeholder="e.g. Hampo Eche" required>
+              </div>
+              <div class="field" tabindex="2">
+                <label for="id_message_email">
+                  <i class="fa fa-envelope"></i>Your Email 
+                </label>
+                <input name="message_email" type="email" placeholder="hampoherobede@gmail.com" required>
+              </div>
+              <div class="field" tabindex="3">
+                <label for="id_phoneNumber">
+                  <i class="fa fa-envelope"></i>Your Phone Number
+                </label>
+                <input name="phoneNumber"  type="text" placeholder="+2347065896334" required>
+              </div>
+              <div class="field" tabindex="4">
+                <label for="id_message_content">
+                  <i class="fa fa-edit"></i>Your Message
+                </label>
+                <textarea name="message_content" placeholder="type here"  required></textarea>
+              </div>
+              <button type="submit">Send Me Message</button>
+            </form>
+
+
+
+
+         
+

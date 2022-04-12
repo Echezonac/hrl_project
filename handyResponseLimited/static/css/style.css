@@ -1,0 +1,153 @@
+/* Font impots */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+/* heading fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+
+/* Root styling */
+:root{
+  --mild-color:#ec268f;
+  --dark-color:#6f1a99;
+  --darker-color:#240046;
+  --light-color:white;
+  --light-dark:#B8B5FF;
+  --grey-color:#f2ebfb;
+  --small-text:small;
+  --medium-text:medium;
+  --large-text:xx-large;
+  --nav-fonts:'Poppins', sans-serif;
+  --thick-width: 1000;
+  --light-width:550;
+  --top-margin:6em;
+  --hero-text:'Oswald', sans-serif;
+}
+/* General styling */
+
+*{
+  padding: 0px;
+  margin: 0px;
+  user-select: none;
+  box-sizing: border-box !important;
+  text-decoration: none !important;
+  font-family: "Saira Semi Condensed", sans-serif;
+  color: var(--light-color);
+  text-align: justify;
+}
+.btnx,.btny{
+  background-color: var(--mild-color) !important;
+  color: var(--light-color) !important;
+  border: none;
+}
+.btnx:hover{
+  background-color: var(--darker-color) !important;
+}
+.btny:hover{
+  background: none !important;
+  border: 2px solid white;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--darker-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:var(--mild-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-color);
+}
+.headings{
+  color: var(--darker-color) !important;
+  font-weight: 600;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+.sub-headings{
+  color: var(--mild-color) !important;
+  font-size: medium !important;
+  font-weight: bold;
+}
+
+/* Header styling */
+/* header{
+  
+} */
+header .linkx:link {
+  color: var(--darker-color) !important;
+  font-size: var(--medium-text) !important;
+  font-weight: 400 !important;
+  transition: 0.8s ease-out;
+  font-family: var(--nav-fonts) !important;
+}
+/* visited link */
+header .linkx:visited {
+  color: var(--darker-color) !important;
+}
+/* mouse over link */
+header .linkx:hover {
+  background-color:var(--darker-color);
+  color: var(--light-color) !important;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+header .linkx:active{
+  color: var(--darker-color) !important;
+}
+/* Hero styling */
+.heroTextBox{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0,0,0,0.8);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+.heroTextBox .h5x{
+    transform: rotate(270deg);
+    width: fit-content;
+    /* background-color: #240046; */
+}
+
+.largeHero p{
+  color: gray;
+  font-size: var(--small-text);
+}
+.firstHeroPic{
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.largeHero .ml10 {
+  position: relative;
+  font-weight: 600;
+  font-size: 3em;
+}
+
+.largeHero .ml10 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.largeHero .ml10 .letter {
+  display: inline-block;
+  line-height: 1em;
+  transform-origin: 0 0;
+  font-family: var(--hero-text);
+}
+/* Why US styling */
+/* footer styling */

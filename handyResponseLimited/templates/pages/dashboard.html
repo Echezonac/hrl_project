@@ -1,0 +1,129 @@
+{% extends 'admin.html' %}
+{% load static %}
+{% block title %}Contact page |Home Responsive Limited | homeresponsivelimited.com Nigeria{% endblock %}
+{% block description %}{{news.content}}{% endblock %}
+{% block keywords %}House Cleaning, Dish Washing, Laundry, Cooking, Chef, Gardener, Nanny, Maid, After-Party cleanup, New House cleaning, Car Washing, House, Car, Vehincle, Help, Baby, House Maid,Nigeria, Africa, Jobs,Money,Employement,Lagos{% endblock %}
+{% block admin %}
+<style>
+  
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table td,
+.table th {
+  padding: 12px 15px;
+  border: 1px solid #B8B5FF;
+  text-align: center;
+  font-size: 16px;
+}
+
+.table th {
+  background-color: #240046;
+  color: #B8B5FF;
+}
+
+.table td{
+  color: #240046;
+}
+
+
+/*responsive*/
+
+@media (max-width: 500px) {
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+  .table tr {
+    margin-bottom: 15px;
+  }
+  .table td {
+    padding-left: 50%;
+    text-align: left;
+    position: relative;
+  }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
+</style>
+
+<!-- Client Bookings start -->
+<section class="row mt-3 py-5" id="bookings">
+  <!-- heading start -->
+  <div class="col-12 pb-3 pt-5">
+    <h3 class="headings p-2">Client Bookings</h3>
+  </div>
+  <!-- heading end -->
+  <div class="col-12">
+    <table class="table">
+      <thead>
+        <th>S.No</th>
+        <th>Fullname</th>
+        <th>Email</th>
+        <th>Location</th>
+        <th>Services</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="S.No">1</td>
+          <td data-label="Name">Hampo Eche</td>
+          <td data-label="Age" style="overflow-wrap: break-word;">hampoherobede@gmail.com</td>
+          <td data-label="Marks%">Ikeja, Lagos</td>
+          <td data-label="Staus" style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, debitis nemo aspernatur deserunt amet officia accusantium hic quod vel quidem nihil, cupiditate nobis error autem quaerat ducimus corporis maxime molestiae delectus facilis similique libero! Harum officia sint obcaecati ut odit expedita assumenda similique, asperiores et tenetur molestias ratione excepturi explicabo cumque aliquam maiores incidunt suscipit, ullam est exercitationem quidem esse perspiciatis voluptate. Adipisci placeat doloribus et dolor magni, animi veritatis ab ratione sequi in a atque repellendus quod eius eligendi esse pariatur cumque laudantium nam architecto saepe dolorem excepturi quasi dicta! Natus nisi ducimus soluta dicta quis beatae adipisci veniam.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Client Booking end -->
+<!-- Client messages start -->
+<section class="row mt-3 py-5" id="messages">
+  <!-- heading start -->
+  <div class="col-12 pb-3 pt-5">
+    <h3 class="headings p-2">Client Messages</h3>
+  </div>
+  <!-- heading end -->
+  <div class="col-12" id="booking">
+    <table class="table">
+      <thead>
+        <th>S.No</th>
+        <th>Fullname</th>
+        <th>Email</th>
+        <th>Location</th>
+        <th>Messages</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="S.No">1</td>
+          <td data-label="Name">Hampo Eche</td>
+          <td data-label="Age" style="overflow-wrap: break-word;">hampoherobede@gmail.com</td>
+          <td data-label="Marks%">Ikeja, Lagos</td>
+          <td data-label="Staus" style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, debitis nemo aspernatur deserunt amet officia accusantium hic quod vel quidem nihil, cupiditate nobis error autem quaerat ducimus corporis maxime molestiae delectus facilis similique libero! Harum officia sint obcaecati ut odit expedita assumenda similique, asperiores et tenetur molestias ratione excepturi explicabo cumque aliquam maiores incidunt suscipit, ullam est exercitationem quidem esse perspiciatis voluptate. Adipisci placeat doloribus et dolor magni, animi veritatis ab ratione sequi in a atque repellendus quod eius eligendi esse pariatur cumque laudantium nam architecto saepe dolorem excepturi quasi dicta! Natus nisi ducimus soluta dicta quis beatae adipisci veniam.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-12" id="message"></div>
+</section>
+<!-- Client messages end -->
+
+{% endblock %}

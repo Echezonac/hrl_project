@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{blog.title}} - Home Responsive Limited{% endblock %}
+{% block description %}Handy Response Limited is a global service-oriented company that provides various types of 'household chores related services', a helping hand to those who are seeking domestic staff who can assist them in managing their household. The company offers its services to everyone ranging from young professionals, the elderly, busy working mums, disabled people, companies/offices, party planners and people moving into new houses. We pride ourselves in building a reputation that substantially outstrips our competitors with a vision to position ourselves as the top-class service provider to households in Nigeria.{% endblock %}
+{% block keywords %}House Cleaning, Dish Washing, Laundry, Cooking, Chef, Gardener, Nanny, Maid, After-Party cleanup, New House cleaning, Car Washing, House, Car, Vehincle, Help, Baby, House Maid,Nigeria, Africa, Jobs,Money,Employement,Lagos{% endblock %}
+{% block main %}
+ <style>
+        img {
+            float: left; 
+            margin: 5px;
+            width: 150px;
+            height: 150px;
+        }
+        p {
+            text-align: justify;
+        }
+    </style>
+<section class="row p-5 align-items-center">
+<div class="col-12 mx-auto my-4">
+    <a href="{% url 'homePage' %}#blog" class="bi bi-arrow-left" style="color: #ec268f;font-weight: 800px;font-size: 30px;"></a>
+    <h1 class="headings py-2">{{blog.title}}</h1>
+    <!--  -->
+    <div class="blog-content">
+        <!-- img -->
+        <div>
+            <img src="{{blog.img.url}}" class="img-fluid" alt="{{blog.title}}">
+        </div>
+        <!-- img -->
+        <!-- word -->
+        <p class="text-dark">{{blog.content}}</p>
+        <small style="color: #ec268f;;">{{blog.date}}</small>
+        <!-- word -->
+    </div>
+</div>
+</section>
+<section style="height: 300px;"></section>
+{% endblock %}

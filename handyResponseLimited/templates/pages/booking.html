@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact page |Home Responsive Limited | homeresponsivelimited.com Nigeria{% endblock %}
+{% block description %}{{news.content}}{% endblock %}
+{% block keywords %}House Cleaning, Dish Washing, Laundry, Cooking, Chef, Gardener, Nanny, Maid, After-Party cleanup, New House cleaning, Car Washing, House, Car, Vehincle, Help, Baby, House Maid,Nigeria, Africa, Jobs,Money,Employement,Lagos{% endblock %}
+{% block main %}
+<style>
+.contact-container{
+    background: radial-gradient(circle, transparent 20%, #f1f6f7 20%, #f1f6f7 80%, transparent 80%, transparent) 0% 0% / 20px 20px, radial-gradient(circle, transparent 20%, #f1f6f7 20%, #f1f6f7 80%, transparent 80%, transparent) 10px 10px / 20px 20px, linear-gradient(#000109 1px, transparent 1px) 0px -0.5px / 10px 10px, linear-gradient(90deg, #000109 1px, #f1f6f7 1px) -0.5px 0px / 10px 10px #f1f6f7;
+    background-color: #f1f6f7;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+p{
+    font-size: small;
+}
+/* Form */
+#contact-form{
+  width: 100%;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    font: inherit;
+}
+input,
+textarea {
+    width: 100%;
+    margin: 10px auto;
+    font: inherit;
+    display: block;
+    border: none;
+    outline: none;
+    padding: 20px 0 10px;
+    border-bottom: solid 1px #240046;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #240046 4%);
+    background-position: -400px 0;
+    background-size: 400px 100%;
+    background-repeat: no-repeat;
+    color: #240046;
+    transition: background 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    resize: none;
+    overflow: hidden;
+}
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  color: #ec268f;
+}
+input:focus, input:valid,
+textarea:focus,
+textarea:valid {
+  box-shadow: none;
+  outline: none;
+  background-position: 0 0;
+}
+input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder,
+textarea:valid::-webkit-input-placeholder {
+  font-size: 0.8em;
+  transform: translateY(-20px);
+  visibility: visible !important;
+  opacity: 1;
+}
+input[type=email] {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #6f1a99 4%);
+  background-position: -400px 0;
+  background-repeat: no-repeat;
+  transition: border-bottom 0.3s ease, background 0.3s ease;
+}
+input[type=email] ~ span.validation-text {
+  position: absolute;
+  visibility: hidden;
+  font-family: "roboto", sans-serif;
+  font-size: 0.6em;
+  width: 400px;
+  margin-left: 25px;
+  margin-top: -5px;
+  color: #6f1a99;
+  transition: color 0.3s ease-in-out;
+}
+input[type=email]:not([value=""])::-webkit-input-placeholder {
+  font-size: 0.8em;
+  transform: translateY(-20px);
+  visibility: visible !important;
+  opacity: 1;
+}
+input[type=email]:not([value=""]):focus::-webkit-input-placeholder {
+  color: #6f1a99;
+}
+input[type=email]:not([value=""]):focus:not(:valid)::-webkit-input-placeholder {
+  color: #E91E63;
+}
+input[type=email]:focus {
+  background-position: 0 0;
+}
+input[type=email]:focus:not(:valid):not([value=""]) {
+  border-bottom: solid 1px #E91E63;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #E91E63 4%);
+}
+input[type=email]:not(:focus):not(:valid):not([value=""]) {
+  border-bottom: solid 1px #E91E63;
+  background-position: 0 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #E91E63 4%);
+}
+input[type=email]:not(:focus):not(:valid):not([value=""])::-webkit-input-placeholder {
+  color: #E91E63;
+}
+input[type=email]:not(:focus):not(:valid):not([value=""]) ~ span.validation-text {
+  visibility: visible;
+  color: #E91E63;
+}
+
+.flex {
+  display: flex;
+  align-items: stretch;
+}
+.flex textarea {
+  line-height: 120%;
+}
+
+</style>
+<!-- Banner start -->
+<section class="row" style="background-color: #B8B5FF;">
+    <div class="col-12 py-5 px-5">
+        <h2 class="headings">
+            Book your Services 
+        </h2>
+        <p class="sub-headings" style="font-weight: normal;">Welcome to Handy responsive Limited Home services</p>
+    </div>
+</section>
+<!-- Banner end -->
+<!-- Contact Container start -->
+<section class="row align-items-center px-5 contact-container">
+  <!-- contact form -->
+         <div class="col-lg-6 mx-auto col-md-8 col-sm-12 bg-light align-items-center d-flex justify-content-center" style="height: 500px;box-shadow: 5px 5px 10px -1px #240046;">
+          <!-- start -->
+          <div style="background-color: red;">
+              <form id="contact-form">
+                  <input placeholder="Enter your fullame" type="text"  value="" required>
+                  <input placeholder="Email address" type="email" onblur="this.setAttribute('value', this.value);" value="" required>
+                  <span class="validation-text">Please enter a valid email address.</span>
+                  <input placeholder="Location" type="text" value="" required>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <div class="flex">
+                    <textarea placeholder="Message" rows="1" required></textarea>
+                  </div>
+                  <button class="btn btnx mx-auto d-block my-3">Send</button>
+                </form>
+          </div>
+          <!-- end -->
+  </div>
+</section>
+<!-- Contact container end -->
+
+
+{% endblock %}
+

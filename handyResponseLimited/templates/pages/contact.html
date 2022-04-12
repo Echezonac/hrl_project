@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact page |Home Responsive Limited | homeresponsivelimited.com Nigeria{% endblock %}
+{% block description %}{{news.content}}{% endblock %}
+{% block keywords %}House Cleaning, Dish Washing, Laundry, Cooking, Chef, Gardener, Nanny, Maid, After-Party cleanup, New House cleaning, Car Washing, House, Car, Vehincle, Help, Baby, House Maid,Nigeria, Africa, Jobs,Money,Employement,Lagos{% endblock %}
+{% block main %}
+<style>
+.contact-container{
+    background: radial-gradient(circle, transparent 20%, #f1f6f7 20%, #f1f6f7 80%, transparent 80%, transparent) 0% 0% / 20px 20px, radial-gradient(circle, transparent 20%, #f1f6f7 20%, #f1f6f7 80%, transparent 80%, transparent) 10px 10px / 20px 20px, linear-gradient(#000109 1px, transparent 1px) 0px -0.5px / 10px 10px, linear-gradient(90deg, #000109 1px, #f1f6f7 1px) -0.5px 0px / 10px 10px #f1f6f7;
+    background-color: #f1f6f7;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+p{
+    font-size: small;
+}
+/* Form */
+#contact-form{
+  width: 100%;
+  /* margin: 100px auto 0;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  padding: 0 0 40px;
+  border-radius: 3px;
+   */
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    font: inherit;
+}
+input,
+textarea {
+    width: 100%;
+    margin: 10px auto;
+    font: inherit;
+    display: block;
+    border: none;
+    outline: none;
+    padding: 20px 0 10px;
+    border-bottom: solid 1px #240046;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #240046 4%);
+    background-position: -400px 0;
+    background-size: 400px 100%;
+    background-repeat: no-repeat;
+    color: #240046;
+    transition: background 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    resize: none;
+    overflow: hidden;
+}
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  color: #ec268f;
+}
+input:focus, input:valid,
+textarea:focus,
+textarea:valid {
+  box-shadow: none;
+  outline: none;
+  background-position: 0 0;
+}
+input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder,
+textarea:valid::-webkit-input-placeholder {
+  font-size: 0.8em;
+  transform: translateY(-20px);
+  visibility: visible !important;
+  opacity: 1;
+}
+input[type=email] {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #6f1a99 4%);
+  background-position: -400px 0;
+  background-repeat: no-repeat;
+  transition: border-bottom 0.3s ease, background 0.3s ease;
+}
+input[type=email] ~ span.validation-text {
+  position: absolute;
+  visibility: hidden;
+  font-family: "roboto", sans-serif;
+  font-size: 0.6em;
+  width: 400px;
+  margin-left: 25px;
+  margin-top: -5px;
+  color: #6f1a99;
+  transition: color 0.3s ease-in-out;
+}
+input[type=email]:not([value=""])::-webkit-input-placeholder {
+  font-size: 0.8em;
+  transform: translateY(-20px);
+  visibility: visible !important;
+  opacity: 1;
+}
+input[type=email]:not([value=""]):focus::-webkit-input-placeholder {
+  color: #6f1a99;
+}
+input[type=email]:not([value=""]):focus:not(:valid)::-webkit-input-placeholder {
+  color: #E91E63;
+}
+input[type=email]:focus {
+  background-position: 0 0;
+}
+input[type=email]:focus:not(:valid):not([value=""]) {
+  border-bottom: solid 1px #E91E63;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #E91E63 4%);
+}
+input[type=email]:not(:focus):not(:valid):not([value=""]) {
+  border-bottom: solid 1px #E91E63;
+  background-position: 0 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #E91E63 4%);
+}
+input[type=email]:not(:focus):not(:valid):not([value=""])::-webkit-input-placeholder {
+  color: #E91E63;
+}
+input[type=email]:not(:focus):not(:valid):not([value=""]) ~ span.validation-text {
+  visibility: visible;
+  color: #E91E63;
+}
+
+.flex {
+  display: flex;
+  align-items: stretch;
+}
+.flex textarea {
+  line-height: 120%;
+}
+
+</style>
+<!-- Banner start -->
+<section class="row" style="background-color: #B8B5FF;">
+    <div class="col-12 py-5 px-5">
+        <h2 class="headings">
+            Contact Us
+        </h2>
+        <p class="sub-headings" style="font-weight: normal;">Drop your message, request, complaits. Be rest assured we will attend to them.</p>
+    </div>
+</section>
+<!-- Banner end -->
+<!-- Contact Container start -->
+<section class="row align-items-center px-5 contact-container">
+    <!-- contact address -->
+    <div class="col-lg-4 col-md-12 col-sm-12 d-flex p-4 align-items-center justify-content-center" style="height: 400px;background-color: #240046;">
+        <div>
+            <p><i class="fa fa-location-arrow" aria-hidden="true"></i> No 1 Sunday Oluwoye Street, Ikeja Lagos State, Nigeria</p>
+            <p> <i class="fa fa-envelope" aria-hidden="true"></i> www.hampoherobede@gmail.com</p>
+                <p> <i class="fa fa-phone" aria-hidden="true"></i> 07065896334</p>
+            <p> <i class="fa fa-phone" aria-hidden="true"></i> 0901154066</p>
+        </div>
+    </div>
+    <!-- contact form -->
+    <div class="col-lg-4 col-md-12 col-sm-12 bg-light align-items-center d-flex justify-content-center" style="height: 500px;box-shadow: 5px 5px 10px -1px #240046;">
+        <!-- start -->
+        <div>
+            <form id="contact-form">
+                <input placeholder="Enter your fullame" type="text"  value="" required>
+                <input placeholder="Email address" type="email" onblur="this.setAttribute('value', this.value);" value="" required>
+                <span class="validation-text">Please enter a valid email address.</span>
+                <input placeholder="Location" type="text" value="" required>
+                <div class="flex">
+                  <textarea placeholder="Message" rows="1" required></textarea>
+                </div>
+                <button class="btn btnx mx-auto d-block">Send</button>
+              </form>
+        </div>
+        <!-- end -->
+    </div>
+    <!-- contact map -->
+    <div class="col-lg-4 col-md-12 col-sm-12 p-2" style="height: 400px;background-color: #240046;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63409.841897196835!2d3.3224299713285843!3d6.632622172136689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf75df5c74367%3A0x6a7e7df9d6c1cd4a!2sLekki!5e0!3m2!1sen!2sng!4v1647552392501!5m2!1sen!2sng"  style="border:0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+<!-- Contact container end -->
+
+
+{% endblock %}
+

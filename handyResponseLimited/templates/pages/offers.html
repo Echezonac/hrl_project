@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}COntact page |Home Responsive Limited | homeresponsivelimited.com Nigeria{% endblock %}
+{% block description %}{{news.content}}{% endblock %}
+{% block keywords %}House Cleaning, Dish Washing, Laundry, Cooking, Chef, Gardener, Nanny, Maid, After-Party cleanup, New House cleaning, Car Washing, House, Car, Vehincle, Help, Baby, House Maid,Nigeria, Africa, Jobs,Money,Employement,Lagos{% endblock %}
+{% block main %}
+<style>
+  .sub-headings{
+  color: var(--mild-color) !important;
+  font-size: medium !important;
+  font-weight: 300;
+  text-align: center;
+ }
+ #overall-services-body{
+  background: radial-gradient(circle, transparent 20%, #f1f6f7 20%, #f1f6f7 80%, transparent 80%, transparent) 0% 0% / 20px 20px, radial-gradient(circle, transparent 20%, #f1f6f7 20%, #f1f6f7 80%, transparent 80%, transparent) 10px 10px / 20px 20px, linear-gradient(#000109 1px, transparent 1px) 0px -0.5px / 10px 10px, linear-gradient(90deg, #000109 1px, #f1f6f7 1px) -0.5px 0px / 10px 10px #f1f6f7;
+  background-color: #f1f6f7;
+  height: fit-content;
+ }
+ .service-container{
+     width: 100%;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-wrap: wrap;
+ }
+ 
+ .service-box{
+     width: 50%;
+     box-sizing: border-box;
+     height: 500px;
+     box-shadow: 5px 5px 10px -1px #240046;
+ }
+ .service-img{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+ }
+ .service-img-clean{
+    background-image: url("{% static 'images/cleaning.jpg' %}") !important;
+ }
+ .service-img-maid{
+    background-image: url("{% static 'images/maid.jpg' %}") !important;
+ }
+ .service-img-care{
+    background-image: url("{% static 'images/cook.jpg' %}") !important;
+ }
+ .service-img-handy{
+    background-image: url("{% static 'images/handyman.jpg' %}") !important;
+ }
+ @media (max-width:767px) {
+    .service-box{
+     width: 100%;
+     background-color: red;
+     border: 2px solid black;
+     box-sizing: border-box;
+     height: fit-content;
+  }
+  .service-container2{
+     flex-direction: column-reverse;
+ }
+}
+/* small device */
+p{
+    text-align: justify;
+    font-size: small;
+}
+.p-list{
+    color: black;
+    font-size: 0.7em;
+    text-align: start;
+}
+i{
+    color: #240046;
+    font-weight: bold;
+}
+</style>
+<!-- Banner start -->
+<section class="row">
+    <div class="col-12 py-5 px-5">
+        <h2 class="headings">
+            Special Offer
+        </h2>
+    </div>
+</section>
+<!-- Banner end -->
+<!-- Overall service body  start-->
+<section class="row p-5" id="overall-services-body">
+    <!-- service container start 1 -->
+    <div class="service-container my-3">
+        <div class="service-box p-5 bg-light">
+            <img src="{% static 'images/bucket.png' %}" alt="" class="img-fluid d-block mx-auto">
+            <h4 class="headings text-center py-3">Royal Package</h4>
+            <p class="text-dark text-justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quis est nemo nulla iusto quam rerum sit alias minus magni!
+            </p>
+            <p class="p-list text-danger fw-bold fs-4">30% off Discount</p>
+            <p class="p-list">Get full royal care, we deploy our staff for your general house care, security, maintenance e.t.c</p>
+            <p class="p-list mute">$30.00 </p>
+            <p class="p-list">Deadline: 24th oct-2022</p>
+            <a class="nav-link btn btnx fw-bold px-3 mx-auto" href="{% url 'bookingPage' %}" style="width: fit-content;">Take Offer</a>
+        </div>
+        <div class="service-box service-img-clean service-img"></div>
+    </div>
+    <!-- service c0ntainer end  1-->
+    <!-- service container start 2-->
+    <div class="service-container service-container2 my-3">
+        <div class="service-box service-img service-img-maid"></div>
+        <div class="service-box bg-light p-5">
+          <img src="{% static 'images/bucket.png' %}" alt="" class="img-fluid d-block mx-auto">
+            <h4 class="headings text-center py-3">Royal Package</h4>
+            <p class="text-dark text-justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quis est nemo nulla iusto quam rerum sit alias minus magni!
+            </p>
+            <p class="p-list text-danger fw-bold fs-4">30% off Discount</p>
+            <p class="p-list">Get full royal care, we deploy our staff for your general house care, security, maintenance e.t.c</p>
+            <p class="p-list">$30.00 </p>
+            <p class="p-list">Deadline: 24th oct-2022</p>
+            <a class="nav-link btn btnx fw-bold px-3 mx-auto" href="{% url 'bookingPage' %}" style="width: fit-content;">Take Offer</a>
+        </div>
+    </div>
+    <!-- service c0ntainer end 2-->
+
+</section>
+<!-- Overall service body end -->
+{% endblock %}

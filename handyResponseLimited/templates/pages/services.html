@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home Responsive Limited  Service page | homeresponsivelimited.com Nigeria{% endblock %}
+{% block description %}
+Home Responsible is a global service-oriented company that provides various types of household chores related services', a helping hand to those who are seeking domestic staff who can assist them in managing their household. 
+{% endblock %}
+{% block keywords %}House Cleaning, Dish Washing, Laundry, Cooking, Chef, Gardener, Nanny, Maid, After-Party cleanup, New House cleaning, Car Washing, House, Car, Vehincle, Help, Baby, House Maid,Nigeria, Africa, Jobs,Money,Employement,Lagos{% endblock %}
+{% block main %}
+<style>
+  .sub-headings{
+  color: var(--mild-color) !important;
+  font-size: medium !important;
+  font-weight: 300;
+  text-align: center;
+ }
+ #overall-services-body{
+  background: radial-gradient(circle, transparent 20%, #f1f6f7 20%, #f1f6f7 80%, transparent 80%, transparent) 0% 0% / 20px 20px, radial-gradient(circle, transparent 20%, #f1f6f7 20%, #f1f6f7 80%, transparent 80%, transparent) 10px 10px / 20px 20px, linear-gradient(#000109 1px, transparent 1px) 0px -0.5px / 10px 10px, linear-gradient(90deg, #000109 1px, #f1f6f7 1px) -0.5px 0px / 10px 10px #f1f6f7;
+  background-color: #f1f6f7;
+  height: fit-content;
+ }
+ .service-container{
+     width: 100%;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-wrap: wrap;
+ }
+ 
+ .service-box{
+     width: 50%;
+     box-sizing: border-box;
+     height: 450px;
+     box-shadow: 5px 5px 10px -1px #240046;
+ }
+ .service-img{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+ }
+ .service-img-clean{
+    background-image: url("{% static 'images/cleaning.jpg' %}") !important;
+ }
+ .service-img-maid{
+    background-image: url("{% static 'images/maid.jpg' %}") !important;
+ }
+ .service-img-care{
+    background-image: url("{% static 'images/cook.jpg' %}") !important;
+ }
+ .service-img-handy{
+    background-image: url("{% static 'images/handyman.jpg' %}") !important;
+ }
+ @media (max-width:767px) {
+    .service-box{
+     width: 100%;
+     background-color: red;
+     border: 2px solid black;
+     box-sizing: border-box;
+     height: fit-content;
+  }
+  .service-container2{
+     flex-direction: column-reverse;
+ }
+}
+/* small device */
+p{
+    text-align: justify;
+    font-size: small;
+}
+.p-list{
+    color: black;
+    font-size: 0.7em;
+    text-align: start;
+}
+i{
+    color: #240046;
+    font-weight: bold;
+}
+</style>
+<!-- Banner start -->
+<section class="row">
+    <div class="col-12 py-5 px-5">
+        <h2 class="headings">
+            Services
+        </h2>
+    </div>
+</section>
+<!-- Banner end -->
+<!-- Overall service body  start-->
+<section class="row p-5" id="overall-services-body">
+    <!-- service container start 1 -->
+    <div class="service-container my-3">
+        <div class="service-box p-5 bg-light">
+            <img src="{% static 'images/bucket.png' %}" alt="" class="img-fluid d-block mx-auto">
+            <h4 class="headings text-center py-3">Cleaning Services</h4>
+            <p class="text-dark text-justify">
+                Providing a clean environment is a key component to healthy living. Cleanliness is of paramount importance to a company's brand, personal, client perception and household.
+            </p>
+            <p class="p-list">Resindentail Cleaning <i class="bi bi-check2-square"></i></p>
+            <p class="p-list">Commercial Washing <i class="bi bi-check2-square"></i></p>
+            <p class="p-list">New House Washing <i class="bi bi-check2-square"></i></p>
+            <p class="p-list">After-Party Cleanup <i class="bi bi-check2-square"></i></p>
+            <a class="nav-link btn btnx fw-bold px-3 mx-auto" href="{% url 'bookingPage' %}" style="width: fit-content;">Book</a>
+        </div>
+        <div class="service-box service-img-clean service-img"></div>
+    </div>
+    <!-- service c0ntainer end  1-->
+    <!-- service container start 2-->
+    <div class="service-container service-container2 my-3">
+        <div class="service-box service-img service-img-maid"></div>
+        <div class="service-box bg-light p-5">
+            <img src="{% static 'images/maid.png' %}" alt="" class="img-fluid d-block mx-auto">
+            <h4 class="headings text-center py-3">Maid Services</h4>
+            <p class="text-dark text-justify">
+                For a cleaning that meets your highest standards, you need a dedicated team of trained specialists. We arrive at each visit with all supplies needed to thoroughly clean your home with our extensive 
+            </p>
+            <p class="p-list">On-site Maid <i class="bi bi-check2-square"></i></p>
+            <p class="p-list">Off-site Maid<i class="bi bi-check2-square"></i></p>
+            <a class="nav-link btn btnx fw-bold px-3 mx-auto" href="{% url 'bookingPage' %}" style="width: fit-content;">Book</a>
+        </div>
+    </div>
+    <!-- service c0ntainer end 2-->
+    <!-- service container start 1 -->
+    <div class="service-container my-3">
+        <div class="service-box p-5 bg-light">
+            <img src="{% static 'images/care.png' %}" alt="" class="img-fluid d-block mx-auto">
+            <h4 class="headings text-center py-3">Home Care Services</h4>
+            <p class="text-dark text-justify">
+                We have the most qualified personal with skills on providing special care for children and kids.
+            </p>
+            <p class="p-list">Nanny <i class="bi bi-check2-square"></i></p>
+            <p class="p-list">Nurse <i class="bi bi-check2-square"></i></p>
+            <p class="p-list">Tutor <i class="bi bi-check2-square"></i></p>
+            <p class="p-list">Chef / Cook <i class="bi bi-check2-square"></i></p>
+            <a class="nav-link btn btnx fw-bold px-3 mx-auto" href="{% url 'bookingPage' %}" style="width: fit-content;">Book</a>
+        </div>
+        <div class="service-box service-img-care service-img"></div>
+    </div>
+    <!-- service c0ntainer end  1-->
+    <!-- service container start 2-->
+    <div class="service-container service-container2 my-3">
+        <div class="service-box service-img service-img-handy"></div>
+        <div class="service-box bg-light p-5">
+            <img src="{% static 'images/handy.png' %}" alt="" class="img-fluid d-block mx-auto">
+            <h4 class="headings text-center py-3">Handyman Services</h4>
+            <p class="text-dark text-justify">
+                 Our handyman services is trusted by nearly by 1 million homeowners for home improvement, maintenance and repair, providing virtually any home repair, installation and maintenance service. You don't want to put your life on hold to fix the door that won't close, or patch the hole in your drywall, and we understand that. 
+            </p>
+            <p class="p-list">Technician, Electrician <i class="bi bi-check2-square"></i></p>
+            <p class="p-list">Plumber, Gardener <i class="bi bi-check2-square"></i></p>
+            <p class="p-list">Painter and Others <i class="bi bi-check2-square"></i></p>
+            <a class="nav-link btn btnx fw-bold px-3 mx-auto" href="{% url 'bookingPage' %}" style="width: fit-content;">Book</a>
+        </div>
+    </div>
+    <!-- service c0ntainer end 2-->
+</section>
+<!-- Overall service body end -->
+
+{% endblock %}
